@@ -32,7 +32,7 @@ public class Controller  {
 
     String budget;
     ObservableList<Expense> expenses = FXCollections.observableArrayList(
-            
+
     ); //this is a list of
     //expenses of expense objects, this is all the expenses that the user has
     //helps me keep track of the total expeses and can calculate the budget
@@ -90,7 +90,12 @@ public class Controller  {
             expenseTable.setItems(expenses);
 
             //and from there totalExpenses will be calculated.
-            totalExpenses+=Integer.parseInt(ex.price);
+            if(ex.price.contains("$")){
+                totalExpenses+=Integer.parseInt(removeCharacter(ex.price,"$"));
+            }
+            else {
+                totalExpenses += Integer.parseInt(ex.price);
+            }
         }
     }
 
