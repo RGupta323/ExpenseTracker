@@ -24,14 +24,16 @@ public class Controller  {
     private TableView expenseTable
             = new TableView();
     @FXML
-    private TableColumn<Expense, String> item_col;
+    private TableColumn<Expense, String> item_col = new TableColumn<>("item");
 
     @FXML
-    private TableColumn<Expense, String> price_col;
+    private TableColumn<Expense, String> price_col = new TableColumn<>("price");
 
 
     String budget;
-    ObservableList<Expense> expenses = FXCollections.observableArrayList(); //this is a list of
+    ObservableList<Expense> expenses = FXCollections.observableArrayList(
+            
+    ); //this is a list of
     //expenses of expense objects, this is all the expenses that the user has
     //helps me keep track of the total expeses and can calculate the budget
     //status
@@ -73,18 +75,19 @@ public class Controller  {
             //now create an expense object to store the expense;
             Expense ex = new Expense(item, price);
             expenses.add(ex);
-            System.out.println(ex.toString());
+            System.out.println("line 76: "+ex.toString());
             //so from here the expense ex, would be added to the TableView
-            item_col = new TableColumn("Item");
-            price_col=new TableColumn<>("Price");
-            expenseTable.setEditable(true);
-            expenseTable.setItems(expenses);
-            expenseTable.getColumns().addAll(
-                    item_col, price_col
-            );
+            //item_col = new TableColumn("Item");
+            //price_col=new TableColumn<>("Price");
+
+            //expenseTable.setEditable(true);
+            //expenseTable.setItems(expenses);
+            //expenseTable.getColumns().addAll(item_col, price_col);
             //associate data with item_col and price_col
             item_col.setCellValueFactory(new PropertyValueFactory<Expense,String>("item"));
             price_col.setCellValueFactory(new PropertyValueFactory<Expense, String>("price"));
+            //adding data to the table
+            expenseTable.setItems(expenses);
 
             //and from there totalExpenses will be calculated.
             totalExpenses+=Integer.parseInt(ex.price);

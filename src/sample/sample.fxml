@@ -23,8 +23,8 @@
       <TextField fx:id="userExpense_txtfield" onAction="#handleExpense" promptText="Enter Expense" GridPane.columnIndex="2" />
       <TableView fx:id="expenseTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
         <columns>
-          <TableColumn fx:id="item" prefWidth="75.0" text="Item" />
-          <TableColumn fx:id="price" prefWidth="75.0" text="Price" />
+          <TableColumn fx:id="item_col" prefWidth="75.0" text="Item" />
+          <TableColumn fx:id="price_col" prefWidth="75.0" text="Price" />
         </columns>
       </TableView>
    </children>
