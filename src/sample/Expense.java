@@ -24,6 +24,8 @@ public class Expense {
     //going to add a dollar sign to price if there isn't one already
     public String modifyPrice(String price) throws Exception{
         if(price.contains("$")) return price;
+        //now going to check for spaces and remove them
+        price=price.strip(); 
         try{
             Integer.parseInt(price);
         }
