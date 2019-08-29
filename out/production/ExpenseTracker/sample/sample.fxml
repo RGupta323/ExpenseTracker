@@ -29,5 +29,7 @@
         </columns>
       </TableView>
       <TextArea fx:id="totalExpenses_txtArea" prefHeight="95.0" prefWidth="131.0" promptText="Total Expenses: " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <TextArea fx:id="budget_textArea" prefHeight="200.0" prefWidth="200.0" promptText="Budget:" GridPane.rowIndex="2" />
+      <TextArea fx:id="budgetStatus_textArea" prefHeight="200.0" prefWidth="200.0" promptText="Budget Status:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
    </children>
 </GridPane>

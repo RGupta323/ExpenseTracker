@@ -32,6 +32,10 @@ public class Controller  {
     private TableColumn<Expense, String> price_col = new TableColumn<>("price");
     @FXML
     private TextArea totalExpenses_txtArea;
+    @FXML
+    private TextArea budget_textArea;
+    @FXML
+    private TextArea budgetStatus_textArea;
     String budget;
     ObservableList<Expense> expenses = FXCollections.observableArrayList(
 
@@ -51,6 +55,7 @@ public class Controller  {
         //ensures that what the user puts in is indeed a number;
         checkIfNumber(budget);
         /*Now write the budget onto the text. */
+        budget_textArea.setText("Budget: $"+budget);
 
 
 
@@ -104,6 +109,12 @@ public class Controller  {
             }
             /*Now write totalExpenses */
             totalExpenses_txtArea.setText("Total Expenses: $"+totalExpenses);
+
+            //now going to determine budget status
+            if(totalExpenses<=Integer.parseInt(budget)){
+                budgetStatus_textArea.setText("UNDER BUDGET");
+            }
+            else budgetStatus_textArea.setText("OVER BUDGET");
         }
     }
 
