@@ -7,8 +7,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.util.LinkedList;
@@ -28,8 +30,8 @@ public class Controller  {
 
     @FXML
     private TableColumn<Expense, String> price_col = new TableColumn<>("price");
-
-
+    @FXML
+    private TextArea totalExpenses_txtArea;
     String budget;
     ObservableList<Expense> expenses = FXCollections.observableArrayList(
 
@@ -48,6 +50,10 @@ public class Controller  {
         budget=removeCharacter(budget_txtfield.getText(), "$");
         //ensures that what the user puts in is indeed a number;
         checkIfNumber(budget);
+        /*Now write the budget onto the text. */
+
+
+
 
     }
     //this method is going to handle the expense the user tries to enter
@@ -96,6 +102,8 @@ public class Controller  {
             else {
                 totalExpenses += Integer.parseInt(ex.price);
             }
+            /*Now write totalExpenses */
+            totalExpenses_txtArea.setText("Total Expenses: $"+totalExpenses);
         }
     }
 

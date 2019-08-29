@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -27,5 +28,6 @@
           <TableColumn fx:id="price_col" prefWidth="75.0" text="Price" />
         </columns>
       </TableView>
+      <TextArea fx:id="totalExpenses_txtArea" prefHeight="95.0" prefWidth="131.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
    </children>
 </GridPane>
